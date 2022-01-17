@@ -925,7 +925,7 @@ function Library:CreateWindow(title, color)
                 end)
             end
             
-            function GroupTypes:CreateTextBox(name, placeholder, callback)
+            function GroupTypes:CreateTextBox(name, callback)
                 name = name or "New TextBox"
                 callback = callback or function() print("clicked") end
 
@@ -943,7 +943,7 @@ function Library:CreateWindow(title, color)
                 Box.ZIndex = 0
                 Box.Font = Enum.Font.SourceSans
                 Box.Text = ""
-                Box.PlaceholderText = placeholder
+                Box.PlaceholderText = name
                 Box.TextScaled = true
                 Box.TextWrapped = true
                 Box.TextColor3 = Color3.fromRGB(0, 0, 0)
