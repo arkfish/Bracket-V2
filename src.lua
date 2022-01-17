@@ -928,7 +928,7 @@ function Library:CreateWindow(title, color)
             
             function GroupTypes:CreateTextBox(name, callback)
                 name = name or "New TextBox"
-                callback = callback or function(text) print(text) end
+                callback = callback or function() print("typed") end
 
                 -- Button Instances
                 local BG = Instance.new("Frame")
@@ -967,6 +967,7 @@ function Library:CreateWindow(title, color)
 
                 -- TextBox Code
                 Box:GetPropertyChangedSignal("Text"):Connect(function()
+                    print("hi", Box.Text)
                     callback(Box.Text)
                 end)
             end
