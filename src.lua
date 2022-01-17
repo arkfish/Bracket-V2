@@ -940,7 +940,7 @@ function Library:CreateWindow(title, color)
                 BG.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
                 BG.BorderColor3 = Color3.fromRGB(8, 8, 8)
                 BG.Position = UDim2.new(0.0399999991, 0, 0.273542613, 0)
-                BG.Size = UDim2.new(0, 234, 0, 20)
+                BG.Size = UDim2.new(0, 234, 0, 40)
                 BG.ZIndex = 0
 
                 -- Button Properties
@@ -951,7 +951,6 @@ function Library:CreateWindow(title, color)
                 Box.Size = UDim2.new(1, 0, 1, 0)
                 Box.ZIndex = 0
                 Box.Font = Enum.Font.SourceSans
-                Box.Text = ""
                 Box.PlaceholderText = name
                 Box.TextScaled = false
                 Box.TextWrapped = false
@@ -966,9 +965,11 @@ function Library:CreateWindow(title, color)
                 UIGradient_17.Parent = BG
 
                 -- TextBox Code
-                Box:GetPropertyChangedSignal("Text"):Connect(function()
-                    print("hi", Box.Text)
-                    callback(Box.Text)
+                Box.Changed:Connect(function(param)
+                    print("hi", Box.Text, param)
+                    if param == "Text" then
+                        callback(Box.Text)
+                    end
                 end)
             end
 
