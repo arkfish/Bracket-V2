@@ -931,16 +931,24 @@ function Library:CreateWindow(title, color)
                 callback = callback or function(text) print(text) end
 
                 -- Button Instances
+                local BG = Instance.new("Frame")
                 local Box = Instance.new("TextBox")
                 local UIGradient_17 = Instance.new("UIGradient")
 
+                BG.Name = "TextBox"
+                BG.Parent = container_2
+                BG.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+                BG.BorderColor3 = Color3.fromRGB(8, 8, 8)
+                BG.Position = UDim2.new(0.0399999991, 0, 0.273542613, 0)
+                BG.Size = UDim2.new(0, 234, 0, 20)
+                BG.ZIndex = 0
+
                 -- Button Properties
-                Box.Name = "TextBox"
-                Box.Parent = container_2
-                Box.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-                Box.BorderColor3 = Color3.fromRGB(8, 8, 8)
-                Box.Position = UDim2.new(0.0399999991, 0, 0.273542613, 0)
-                Box.Size = UDim2.new(0, 234, 0, 20)
+                Box.Name = "input"
+                Box.Parent = BG
+                Box.BackgroundTransparency = 1
+                Box.Position = UDim2.new(0, 0, 0, 0)
+                Box.Size = UDim2.new(1, 0, 1, 0)
                 Box.ZIndex = 0
                 Box.Font = Enum.Font.SourceSans
                 Box.Text = ""
@@ -955,7 +963,7 @@ function Library:CreateWindow(title, color)
                 
                 UIGradient_17.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(167, 167, 167))}
                 UIGradient_17.Rotation = 90
-                UIGradient_17.Parent = Box
+                UIGradient_17.Parent = BG
 
                 -- TextBox Code
                 Box:GetPropertyChangedSignal("Text"):Connect(function(text)
