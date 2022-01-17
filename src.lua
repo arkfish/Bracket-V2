@@ -966,7 +966,6 @@ function Library:CreateWindow(title, color)
 
                 -- TextBox Code
                 Box.Changed:Connect(function(param)
-                    print("hi", Box.Text, param)
                     if param == "Text" then
                         callback(Box.Text)
                     end
