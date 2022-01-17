@@ -966,8 +966,8 @@ function Library:CreateWindow(title, color)
                 UIGradient_17.Parent = BG
 
                 -- TextBox Code
-                Box:GetPropertyChangedSignal("Text"):Connect(function(text)
-                    callback(text)
+                Box:GetPropertyChangedSignal("Text"):Connect(function()
+                    callback(Box.Text)
                 end)
             end
 
