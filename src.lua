@@ -953,7 +953,7 @@ function Library:CreateWindow(title, color)
                 Box.Font = Enum.Font.SourceSans
                 Box.PlaceholderText = name
                 Box.TextScaled = false
-                Box.TextWrapped = false
+                Box.TextWrapped = true
                 Box.TextColor3 = Color3.fromRGB(0, 0, 0)
                 Box.TextSize = 14.000
                 Box.ClearTextOnFocus = false
