@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 -- ui lib
 local Library = {}
 
@@ -927,7 +928,7 @@ function Library:CreateWindow(title, color)
             
             function GroupTypes:CreateTextBox(name, callback)
                 name = name or "New TextBox"
-                callback = callback or function() print("clicked") end
+                callback = callback or function(text) print(text) end
 
                 -- Button Instances
                 local Box = Instance.new("TextBox")
@@ -949,12 +950,14 @@ function Library:CreateWindow(title, color)
                 Box.TextColor3 = Color3.fromRGB(0, 0, 0)
                 Box.TextSize = 14.000
                 Box.ClearTextOnFocus = false
+                Box.TextStrokeTransparency = 0.000
+                Box.TextColor3 = Color3.fromRGB(255, 255, 255)
                 
                 UIGradient_17.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(167, 167, 167))}
                 UIGradient_17.Rotation = 90
                 UIGradient_17.Parent = Box
 
-                -- Button Code
+                -- TextBox Code
                 Box:GetPropertyChangedSignal("Text"):Connect(function(text)
                     callback(text)
                 end)
