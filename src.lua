@@ -600,7 +600,7 @@ function Library:CreateWindow(title, color)
                 BG.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
                 BG.BorderColor3 = Color3.fromRGB(8, 8, 8)
                 BG.Position = UDim2.new(0.0399999991, 0, 0.273542613, 0)
-                BG.Size = UDim2.new(0, 234, 0, 40)
+                BG.Size = UDim2.new(0, 234, 0, 28)
                 BG.ZIndex = 0
 
                 -- Button Properties
@@ -617,7 +617,7 @@ function Library:CreateWindow(title, color)
                 Box.TextWrapped = true
                 Box.TextColor3 = Color3.fromRGB(0, 0, 0)
                 Box.TextSize = 14.000
-                Box.ClearTextOnFocus = false
+                Box.ClearTextOnFocus = true
                 Box.TextStrokeTransparency = 0.000
                 Box.TextColor3 = Color3.fromRGB(255, 255, 255)
                 
@@ -821,6 +821,9 @@ function Library:CreateWindow(title, color)
                 title_4.TextStrokeTransparency = 0.000
                 title_4.TextXAlignment = Enum.TextXAlignment.Left
                 
+                UIListLayout_4.Parent = list
+                UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+                
                 list.Name = "list"
                 list.Parent = combobox
                 list.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
@@ -834,13 +837,10 @@ function Library:CreateWindow(title, color)
                 UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(167, 167, 167))}
                 UIGradient_4.Rotation = 90
                 UIGradient_4.Parent = list
-                
-                UIListLayout_4.Parent = list
-                UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
 
-                UIListLayout_4:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
-                    list.Size = UDim2.new(0, 234, 0, UIListLayout_4.AbsoluteContentSize.Y)
-                end)
+                --UIListLayout_4:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+                    --list.Size = UDim2.new(0, 234, 0, UIListLayout_4.AbsoluteContentSize.Y)
+                --end)
 
                 -- Dropdown Code
                 main_2.MouseButton1Click:Connect(function()
