@@ -833,6 +833,7 @@ function Library:CreateWindow(title, color)
                 list.ClipsDescendants = true
                 list.ScrollBarImageTransparency = 1
                 list.Visible = false
+                list.Size = UDim2.new(0, 234, 0, 60)
                 
                 UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(167, 167, 167))}
                 UIGradient_4.Rotation = 90
