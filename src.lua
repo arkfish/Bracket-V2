@@ -830,7 +830,7 @@ function Library:CreateWindow(title, color)
                 list.BorderColor3 = Color3.fromRGB(8, 8, 8)
                 list.Position = UDim2.new(0, 0, 1, 0)
                 list.Size = UDim2.new(0, 234, 0, 5)
-                list.ClipsDescendants = true
+                list.ClipsDescendants = false
                 list.ScrollBarImageTransparency = 1
                 list.Visible = false
                 list.Size = UDim2.new(0, 234, 0, 60)
